@@ -37,7 +37,6 @@ def emotion_detector(text_to_analyze):
         }
 
     response_dict = json.loads(response.text)
-
     emotions = response_dict["emotionPredictions"][0]["emotion"]
 
     anger_score = emotions["anger"]

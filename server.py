@@ -18,6 +18,9 @@ def emotion_detector_endpoint():
     """Process text and return emotion results."""
     text_to_analyze = request.args.get("textToAnalyze")
 
+    if not text_to_analyze:
+        return "Invalid text! Please try again!"
+
     result = emotion_detector(text_to_analyze)
 
     if result["dominant_emotion"] is None:
